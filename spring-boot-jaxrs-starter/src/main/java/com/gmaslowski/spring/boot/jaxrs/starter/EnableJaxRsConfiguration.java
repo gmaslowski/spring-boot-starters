@@ -1,5 +1,6 @@
-package com.gmaslowski.spring.boot.jaxrs.configuration;
+package com.gmaslowski.spring.boot.jaxrs.starter;
 
+import com.gmaslowski.spring.boot.jaxrs.configuration.JaxRsConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.context.annotation.Import;
 
