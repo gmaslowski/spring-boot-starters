@@ -1,0 +1,8 @@
+dependencies {
+    // Apache CXF with Jackson
+    compile("org.apache.cxf:cxf-rt-frontend-jaxrs:3.1.4")
+    compile("com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.7.0")
+
+    // todo: temporary to have servlet
+    compile("org.springframework.boot:spring-boot-starter-web")
+}
