@@ -18,5 +18,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Inherited
 @AutoConfigurationPackage
 @Import(JaxRsConfiguration.class)
-public @interface EnableJaxRsConfiguration {
+public @interface EnableJaxRs {
 }
