@@ -3,9 +3,13 @@ package com.gmaslowski.spring.boot.jaxrs.configuration
 import com.gmaslowski.spring.boot.jaxrs.starter.EnableJaxRs
 import com.gmaslowski.spring.boot.jaxrs.stereotype.annotation.JaxRsController
 import org.apache.cxf.jaxrs.ext.PATCH
+import org.spockframework.spring.SpringTestContextManager
+import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
-import org.springframework.boot.test.SpringApplicationConfiguration
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
+import org.springframework.context.annotation.Configuration
 
 import javax.servlet.http.HttpServletResponse
 import javax.ws.rs.DELETE
@@ -22,11 +26,18 @@ import javax.ws.rs.core.Context
 import static javax.servlet.http.HttpServletResponse.SC_ACCEPTED
 import static javax.servlet.http.HttpServletResponse.SC_FORBIDDEN
 
-@SpringApplicationConfiguration
+@Configuration
+@SpringBootApplication
 @ComponentScan("com.gmaslowski.spring.boot.jaxrs")
 @EnableJaxRs
 @EnableAutoConfiguration
 class JaxRsCxfApplicationContext {
+
+    @Bean
+    public JaxRsCxfRestController jaxRsCxfRestController() {
+        new JaxRsCxfRestController()
+    }
+
 
     @JaxRsController
     class JaxRsCxfRestController implements JaxRsRestController {

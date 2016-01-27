@@ -11,7 +11,7 @@ class JaxRsStarterTest extends Specification {
 
     def "should verify get"() {
         when:
-        def resp = client.get(path: "/api/f1/constructors/mclaren/circuits/monza/drivers/alonso.json")
+        def resp = client.get(path: "/rest")
 
         then:
         resp.data.id == 7
